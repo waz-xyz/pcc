@@ -1,4 +1,4 @@
-/*	$Id: ccconfig.h,v 1.24 2012/09/23 09:45:04 ragge Exp $	*/
+/*	$Id: ccconfig.h,v 1.25 2012/12/12 17:45:23 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004 Anders Magnusson (ragge@ludd.luth.se).
@@ -53,4 +53,15 @@
 #define DYNLINKER { "-dynamic-linker", "/lib/ld.so.1", NULL }
 #else
 #error defines for arch missing
+#endif
+
+/* fixup small m options */
+#if defined(mach_amd64)
+#define PCC_EARLY_ARG_CHECK	{					\
+	if (match(argp, "-m32")) {					\
+		argp = "-melf_i386";					\
+	} else if (match(argp, "-m64")) {				\
+		argp = "-melf_x86_64";					\
+	}								\
+}
 #endif
