@@ -1,4 +1,4 @@
-/*	$Id: ccconfig.h,v 1.2 2012/08/05 14:35:00 ragge Exp $	*/
+/*	$Id: ccconfig.h,v 1.3 2014/03/09 09:32:58 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004 Anders Magnusson (ragge@ludd.luth.se).
@@ -44,6 +44,8 @@
 
 #if defined(mach_pdp11)
 #define	CPPMDADD { "-D__pdp11__", "-Dpdp11", NULL, }
+#elif defined(mach_nova)
+#define	CPPMDADD { "-D__nova__", "-Dnova", NULL, }
 #else
 #error defines for arch missing
 #endif

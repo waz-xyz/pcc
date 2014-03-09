@@ -1,4 +1,4 @@
-/*	$Id: table.c,v 1.1 2006/07/30 09:30:48 ragge Exp $	*/
+/*	$Id: table.c,v 1.2 2014/03/09 09:32:58 ragge Exp $	*/
 /*
  * Copyright (c) 2006 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -1501,8 +1501,6 @@ struct optab table[] = {
 { FLD, DF(FLD), },
 
 { OPLEAF, DF(NAME), },
-
-{ INIT, DF(INIT), },
 
 { OPUNARY, DF(UMINUS), },
 
