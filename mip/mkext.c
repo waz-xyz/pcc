@@ -1,4 +1,4 @@
-/*	$Id: mkext.c,v 1.51 2012/04/22 21:07:41 plunky Exp $	*/
+/*	$Id: mkext.c,v 1.52 2014/03/11 21:32:18 ragge Exp $	*/
 
 /*
  * Generate defines for the needed hardops.
@@ -373,7 +373,9 @@ if (bitsz == 64) {
 	}
 	fprintf(fc, "static int rmap[NUMCLASS][%d] = {\n", mx);
 	for (j = 0; j < NUMCLASS; j++) {
-		int cl = (1 << (j+1));
+		int cl = SAREG << j;
+		if (j > 3)
+			cl = SEREG << (j - 4);
 		fprintf(fc, "\t{ ");
 		for (i = 0; i < MAXREGS; i++)
 			if (rstatus[i] & cl) fprintf(fc, "%d, ", i);
