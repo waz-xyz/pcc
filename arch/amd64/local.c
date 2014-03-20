@@ -1,4 +1,4 @@
-/*	$Id: local.c,v 1.76 2012/10/28 13:59:28 ragge Exp $	*/
+/*	$Id: local.c,v 1.77 2014/03/20 18:45:36 ragge Exp $	*/
 /*
  * Copyright (c) 2008 Michael Shalayeff
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
@@ -819,12 +819,12 @@ fixdef(struct symtab *sp)
 
 #ifdef HAVE_WEAKREF
 	/* not many as'es have this directive */
-	if ((ga = gcc_get_attr(sp->sap, GCC_ATYP_WEAKREF)) != NULL) {
-		char *wr = ga->a1.sarg;
+	if ((ga = attr_find(sp->sap, GCC_ATYP_WEAKREF)) != NULL) {
+		char *wr = ga->sarg(0);
 		char *sn = sp->soname ? sp->soname : sp->sname;
 		if (wr == NULL) {
-			if ((ga = gcc_get_attr(sp->sap, GCC_ATYP_ALIAS))) {
-				wr = ga->a1.sarg;
+			if ((ga = attr_find(sp->sap, GCC_ATYP_ALIAS))) {
+				wr = ga->sarg(0);
 			}
 		}
 		if (wr == NULL)
