@@ -1,4 +1,4 @@
-/*	$Id: code.c,v 1.1 2014/03/23 14:39:09 ragge Exp $	*/
+/*	$Id: code.c,v 1.2 2014/04/01 20:08:24 ragge Exp $	*/
 /*
  * Copyright (c) 2014 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -145,6 +145,9 @@ ejobcode(int flag)
 void
 bjobcode(void)
 {
+	/* Set correct names for our types */
+	astypnames[SHORT] = astypnames[USHORT] = "\t.word";
+	astypnames[INT] = astypnames[UNSIGNED] = "\t.long";
 }
 
 /*
