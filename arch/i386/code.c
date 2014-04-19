@@ -1,4 +1,4 @@
-/*	$Id: code.c,v 1.69 2012/09/08 16:01:54 ragge Exp $	*/
+/*	$Id: code.c,v 1.70 2014/04/19 07:47:51 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -62,7 +62,8 @@ setseg(int seg, char *name)
 	case CTORS: name = ".section\t.ctors,\"aw\",@progbits"; break;
 	case DTORS: name = ".section\t.dtors,\"aw\",@progbits"; break;
 	case NMSEG: 
-		printf("\t.section %s,\"aw\",@progbits\n", name);
+		printf("\t.section %s,\"a%c\",@progbits\n", name,
+		    cftnsp ? 'x' : 'w');
 		return;
 	}
 	printf("\t%s\n", name);
