@@ -1,4 +1,4 @@
-/*	$Id: macdefs.h,v 1.28 2014/03/20 18:45:36 ragge Exp $	*/
+/*	$Id: macdefs.h,v 1.29 2014/04/29 18:17:04 ragge Exp $	*/
 /*
  * Copyright (c) 2008 Michael Shalayeff
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
@@ -122,6 +122,10 @@ typedef long long OFFSZ;
 #define FINDMOPS	/* i386 has instructions that modifies memory */
 
 #define	CC_DIV_0	/* division by zero is safe in the compiler */
+
+#ifdef MACHOABI
+#define	HASP2ALIGN
+#endif
 
 /* Definitions mostly used in pass2 */
 
