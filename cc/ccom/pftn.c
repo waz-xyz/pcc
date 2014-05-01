@@ -1,4 +1,4 @@
-/*	$Id: pftn.c,v 1.365 2014/04/30 15:56:48 ragge Exp $	*/
+/*	$Id: pftn.c,v 1.366 2014/05/01 12:30:40 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -316,6 +316,8 @@ defid2(NODE *q, int class, char *astr)
 		break;
 
 	case STATIC:
+		if (astr)
+			p->soname = astr;
 		if (scl==USTATIC || (scl==EXTERN && blevel==0)) {
 			p->sclass = STATIC;
 			goto done;
@@ -433,6 +435,8 @@ defid2(NODE *q, int class, char *astr)
 	case EXTDEF:
 	case EXTERN:
 		p->soffset = getlab();
+		/* FALLTHROUGH */
+	case USTATIC:
 		if (astr)
 			p->soname = astr;
 		break;
