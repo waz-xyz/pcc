@@ -1,4 +1,4 @@
-/*	$Id: local.c,v 1.172 2014/05/01 15:53:20 ragge Exp $	*/
+/*	$Id: local.c,v 1.173 2014/05/02 10:44:33 gmcgarry Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -795,6 +795,7 @@ fixnames(NODE *p, void *arg)
 			return; /* function pointer */
 
 		if (isu) {
+			*c = 0;
 			addstub(&stublist, sp->soname+1);
 			memcpy(c, "$stub", sizeof("$stub"));
 		} else 
