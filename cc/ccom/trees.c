@@ -1,4 +1,4 @@
-/*	$Id: trees.c,v 1.323 2014/05/03 09:47:51 ragge Exp $	*/
+/*	$Id: trees.c,v 1.324 2014/05/03 09:57:57 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -2928,7 +2928,9 @@ pprop(NODE *p, TWORD t, struct attr *ap)
 		if (coptype(o) == LTYPE)
 			break;
 
-fwalk(p, eprint, 0);
+#ifdef PCC_DEBUG
+		fwalk(p, eprint, 0);
+#endif
 		cerror("pprop op error %d\n", o);
 	}
 	if (coptype(o) == BITYPE)
