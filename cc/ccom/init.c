@@ -1,4 +1,4 @@
-/*	$Id: init.c,v 1.89 2014/05/16 13:02:02 ragge Exp $	*/
+/*	$Id: init.c,v 1.90 2014/05/17 20:42:15 plunky Exp $	*/
 
 /*
  * Copyright (c) 2004, 2007 Anders Magnusson (ragge@ludd.ltu.se).
@@ -62,6 +62,7 @@
  */
 
 #include "pass1.h"
+#include "unicode.h"
 #include <string.h>
 
 /*
