@@ -1,3 +1,5 @@
+/*	$Id: unicode.h,v 1.2 2014/05/28 06:58:58 plunky Exp $	*/
+
 #ifndef _UNICODE_H
 #define _UNICODE_H
 

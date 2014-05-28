@@ -1,3 +1,4 @@
+/*	$Id: unicode.c,v 1.6 2014/05/28 06:58:58 plunky Exp $	*/
 /*
  * Copyright (c) 2014 Eric Olson <ejolson@renomath.org>
  * Some rights reserved.
