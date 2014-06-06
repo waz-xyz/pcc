@@ -1,4 +1,4 @@
-/*	$Id: trees.c,v 1.326 2014/06/01 07:51:46 ragge Exp $	*/
+/*	$Id: trees.c,v 1.327 2014/06/06 16:21:41 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -3152,6 +3152,7 @@ copst(int op)
 	SNAM(ATTRIB,ATTRIBUTE)
 	SNAM(TYMERGE,TYMERGE)
 	SNAM(LABEL,LABEL)
+	SNAM(UPLUS,U+)
 #ifdef GCC_COMPAT
 	SNAM(XREAL,__real__)
 	SNAM(XIMAG,__imag__)
@@ -3189,6 +3190,7 @@ cdope(int op)
 	case XREAL:
 	case ATTRIB:
 	case LABEL:
+	case UPLUS:
 		return UTYPE;
 	case ANDAND:
 	case OROR:
