@@ -1,4 +1,4 @@
-/*	$Id: common.c,v 1.110 2014/06/06 13:19:03 plunky Exp $	*/
+/*	$Id: common.c,v 1.111 2014/06/07 07:04:10 plunky Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -168,8 +168,8 @@ werror(char *s, ...)
 
 struct Warning {
 	char *flag;
-	int warn;
-	int err;
+	char warn;
+	char err;
 	char *fmt;
 };
 
@@ -210,6 +210,9 @@ struct Warning Warnings[] = {
 	}, {
 		"deprecated-declarations", 1, 0,
 		"`%s' is deprecated"
+	}, {
+		"attributes", 1, 0,
+		"unsupported attribute `%s'"
 	}, {	NULL	}
 };
 
