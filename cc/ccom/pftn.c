@@ -1,4 +1,4 @@
-/*	$Id: pftn.c,v 1.374 2014/06/06 08:19:02 ragge Exp $	*/
+/*	$Id: pftn.c,v 1.375 2014/06/20 07:04:48 plunky Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -1237,7 +1237,7 @@ strend(int wide, char *str)
 		sp = getsymtab(str, SSTRING|STEMP);
 	} else {
 		str = addstring(str);	/* enter string in string table */
-		sp = lookup(str, SSTRING);	/* check for existance */
+		sp = lookup(str, SSTRING);	/* check for existence */
 	}
 
 	if (sp->soffset == 0) { /* No string */
