@@ -1,4 +1,4 @@
-/*	$Id: token.c,v 1.116 2014/06/06 15:32:53 plunky Exp $	*/
+/*	$Id: token.c,v 1.117 2014/08/18 18:46:05 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004,2009 Anders Magnusson. All rights reserved.
@@ -1007,7 +1007,8 @@ prtline(void)
 	if (Mflag) {
 		if (dMflag)
 			return; /* no output */
-		if (ifiles->lineno == 1) {
+		if (ifiles->lineno == 1 &&
+		    (MMDflag == 0 || ifiles->idx != SYSINC)) {
 			sheap("%s: %s\n", Mfile, ifiles->fname);
 			if (MPflag &&
 			    strcmp((const char *)ifiles->fname, (char *)MPfile))
