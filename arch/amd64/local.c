@@ -1,4 +1,4 @@
-/*	$Id: local.c,v 1.83 2014/08/26 18:08:38 ragge Exp $	*/
+/*	$Id: local.c,v 1.84 2014/08/28 15:44:07 ragge Exp $	*/
 /*
  * Copyright (c) 2008 Michael Shalayeff
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
@@ -663,7 +663,8 @@ ninval(CONSZ off, int fsz, NODE *p)
 		/* XXX probably broken on most hosts */
 		printf("\t.long\t0x%x,0x%x,0x%x,0\n", u.i[2], u.i[1], u.i[0]);
 #else
-		printf("\t.long\t0x%x,0x%x,0x%x,0\n", u.i[0], u.i[1], u.i[2]);
+		printf("\t.long\t0x%x,0x%x,0x%x,0\n", u.i[0], u.i[1],
+		    u.i[2] & 0xffff);
 #endif
 		break;
 	case DOUBLE:
