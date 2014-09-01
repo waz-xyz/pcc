@@ -1,5 +1,5 @@
 %{
-/*	$Id: scan.l,v 1.124 2014/08/22 13:13:29 plunky Exp $	*/
+/*	$Id: scan.l,v 1.125 2014/09/01 17:58:01 ragge Exp $	*/
 
 /*
  * Copyright (c) 2002 Anders Magnusson. All rights reserved.
@@ -365,7 +365,7 @@ fdecl(char *c, char **ep)
 
 	while (isdigit((int)*c)) {
 		val *= 10;
-		val += *c++;
+		val += *c++ - '0';
 		if (val > 32769)
 			val = 32769;
 	}
