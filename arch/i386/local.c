@@ -1,4 +1,4 @@
-/*	$Id: local.c,v 1.187 2015/01/05 10:29:57 ragge Exp $	*/
+/*	$Id: local.c,v 1.188 2015/01/06 03:25:58 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -171,7 +171,6 @@ picext(NODE *p)
 	q = block(UMUL, q, 0, p->n_type, p->n_df, p->n_ap);
 	q->n_sp = p->n_sp; /* for init */
 	nfree(p);
-printf("pucext\n"); fwalk(q, eprint, 0);
 	return q;
 
 #elif defined(MACHOABI)
