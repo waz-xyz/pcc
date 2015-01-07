@@ -1,4 +1,4 @@
-/*      $Id: gcc_compat.c,v 1.108 2015/01/05 15:21:09 ragge Exp $     */
+/*      $Id: gcc_compat.c,v 1.109 2015/01/07 05:14:24 gmcgarry Exp $     */
 /*
  * Copyright (c) 2004 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -363,6 +363,8 @@ struct atax {
 	CS(GCC_ATYP_FASTCALL)	{ A_0ARG, "fastcall" },
 
 	CS(GCC_ATYP_BOUNDED)	{ A_3ARG|A_MANY|A1_NAME, "bounded" },
+
+	CS(GCC_ATYP_WEAKIMPORT)	{ A_0ARG, "weak_import" },
 };
 
 #if SZPOINT(CHAR) == SZLONGLONG
