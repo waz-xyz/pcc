@@ -1,4 +1,4 @@
-/*	$Id: ccconfig.h,v 1.1 2015/01/07 05:20:48 gmcgarry Exp $	*/
+/*	$Id: ccconfig.h,v 1.2 2015/01/08 06:31:11 plunky Exp $	*/
 
 /*
  * Copyright (c) 2004 Anders Magnusson (ragge@ludd.luth.se).
@@ -34,7 +34,7 @@
 
 #define CRT0		"crt1.o"
 #define GCRT0		"gcrt1.o"
-#define DYNLINKER { "-dynamic-linker", "/system/bin/linker", NULL }
+#define DYNLINKLIB	"/system/bin/linker"
 
 #define STARTLABEL "_start"
 
