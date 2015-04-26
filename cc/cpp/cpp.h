@@ -1,4 +1,4 @@
-/*	$Id: cpp.h,v 1.75 2014/12/18 19:21:29 plunky Exp $	*/
+/*	$Id: cpp.h,v 1.76 2015/04/26 18:27:23 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004,2010 Anders Magnusson (ragge@ludd.luth.se).
@@ -94,8 +94,11 @@ extern int bidx;
 extern usch spechr[];
 
 #define iswsnl(x)	(spechr[x] & (C_WSNL))
+#define ISWS(x)		((x) == '\t' || (x) == ' ')
 
-/* definition for include file info */
+/*
+ * definition for include file info
+ */
 struct includ {
 	struct includ *next;
 	const usch *fname;	/* current fn, changed if #line found */
