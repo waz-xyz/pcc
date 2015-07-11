@@ -1,4 +1,4 @@
-/*	$Id: cpp.c,v 1.221 2015/07/09 21:24:00 ragge Exp $	*/
+/*	$Id: cpp.c,v 1.222 2015/07/11 07:38:17 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004,2010 Anders Magnusson (ragge@ludd.luth.se).
@@ -883,7 +883,7 @@ define(void)
 	/* parse replacement-list, substituting arguments */
 	wascon = 0;
 	while (c != '\n') {
-		cc[0] = c, cc[1] = cinput();
+		cc[0] = c, cc[1] = inc2();
 		t = getyp(cc);
 		cunput(cc[1]);
 
