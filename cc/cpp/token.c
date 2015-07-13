@@ -1,4 +1,4 @@
-/*	$Id: token.c,v 1.146 2015/07/13 08:11:09 ragge Exp $	*/
+/*	$Id: token.c,v 1.147 2015/07/13 14:58:15 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004,2009 Anders Magnusson. All rights reserved.
@@ -733,6 +733,10 @@ exprline(void)
 	Cflag = ifdef = 0;
 
 	while ((c = inch()) != '\n') {
+		if (ISDIGIT(c) || c == '.')
+			c = fastnum(c, savch);
+		if (c == '\n')
+			break;
 		if (ISID0(c)) {
 			cp = heapid(c);
 			stringbuf = cp;
