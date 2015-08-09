@@ -1,4 +1,4 @@
-/*	$Id: common.c,v 1.117 2015/08/09 09:45:54 ragge Exp $	*/
+/*	$Id: common.c,v 1.118 2015/08/09 12:29:56 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -993,6 +993,16 @@ xstrdup(char *s)
 	void *rv;
 
 	if ((rv = strdup(s)) == NULL)
+		cerror("out of memory!");
+	return rv;
+}
+
+void *
+xcalloc(int a, int b)
+{
+	void *rv;
+
+	if ((rv = calloc(a, b)) == NULL)
 		cerror("out of memory!");
 	return rv;
 }
