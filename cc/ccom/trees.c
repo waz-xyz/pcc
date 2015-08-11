@@ -1,4 +1,4 @@
-/*	$Id: trees.c,v 1.351 2015/08/10 18:01:11 ragge Exp $	*/
+/*	$Id: trees.c,v 1.352 2015/08/11 20:08:22 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -1219,7 +1219,7 @@ stref(NODE *p)
 	if ((yap = attr_find(ap, GCC_ATYP_PACKED)) != NULL)
 		xap = yap;
 	else if (xap != NULL)
-		ap = attr_add(ap, attr_dup(xap, 3));
+		ap = attr_add(ap, attr_dup(xap));
 	/* xap set if packed struct */
 #else
 	yap = NULL;
@@ -2804,7 +2804,7 @@ p2tree(NODE *p)
 	p->n_ap = NULL;
 	for (ap = oap; ap; ap = ap->next)
 		if (ap->atype < ATTR_MI_MAX)
-			p->n_ap = attr_add(p->n_ap, attr_dup(ap, 3));
+			p->n_ap = attr_add(p->n_ap, attr_dup(ap));
 	/* XXX store size of attr in itself */
 
 	ty = coptype(p->n_op);

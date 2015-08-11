@@ -1,4 +1,4 @@
-/*      $Id: gcc_compat.c,v 1.113 2015/07/20 15:05:16 ragge Exp $     */
+/*      $Id: gcc_compat.c,v 1.114 2015/08/11 20:08:22 ragge Exp $     */
 /*
  * Copyright (c) 2004 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -714,7 +714,7 @@ gcc_modefix(NODE *p)
 		    i == LDOUBLE ? "0l" : 0;
 		sp = lookup(addname(s), 0);
 		for (ap = sp->sap; ap != NULL; ap = ap->next)
-			p->n_ap = attr_add(p->n_ap, attr_dup(ap, 3));
+			p->n_ap = attr_add(p->n_ap, attr_dup(ap));
 		break;
 
 	default:

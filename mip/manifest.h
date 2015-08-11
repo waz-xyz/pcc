@@ -1,4 +1,4 @@
-/*	$Id: manifest.h,v 1.109 2015/08/09 12:29:56 ragge Exp $	*/
+/*	$Id: manifest.h,v 1.110 2015/08/11 20:08:22 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -326,7 +326,7 @@ struct attr *attr_add(struct attr *orig, struct attr *new);
 struct attr *attr_new(int, int);
 struct attr *attr_find(struct attr *, int);
 struct attr *attr_copy(struct attr *src, struct attr *dst, int nelem);
-struct attr *attr_dup(struct attr *ap, int n);
+struct attr *attr_dup(struct attr *ap);
 
 /*
  * External declarations, typedefs and the like
