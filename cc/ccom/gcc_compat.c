@@ -1,4 +1,4 @@
-/*      $Id: gcc_compat.c,v 1.114 2015/08/11 20:08:22 ragge Exp $     */
+/*      $Id: gcc_compat.c,v 1.115 2015/08/13 11:56:02 ragge Exp $     */
 /*
  * Copyright (c) 2004 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -35,6 +35,10 @@
 #include "cgram.h"
 
 #include <string.h>
+
+#define	NODE P1ND
+#define	nfree p1nfree
+#define	tfree p1tfree
 
 static struct kw {
 	char *name, *ptr;
