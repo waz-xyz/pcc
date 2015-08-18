@@ -1,4 +1,4 @@
-/*	$Id: pass1.h,v 1.279 2015/08/18 08:52:46 ragge Exp $	*/
+/*	$Id: pass1.h,v 1.280 2015/08/18 10:07:01 ragge Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -41,6 +41,7 @@
 #ifdef HAVE_STDINT_H
 #include <stdint.h>
 #endif
+#include <stdlib.h>
 
 #ifndef MKEXT
 #include "external.h"
