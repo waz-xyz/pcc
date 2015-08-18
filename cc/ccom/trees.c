@@ -1,4 +1,4 @@
-/*	$Id: trees.c,v 1.354 2015/08/13 20:03:17 ragge Exp $	*/
+/*	$Id: trees.c,v 1.355 2015/08/18 08:52:46 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -2209,7 +2209,7 @@ cstknode(TWORD t, union dimfun *df, struct attr *ap)
 	struct symtab *sp;
 
 	/* create a symtab entry suitable for this type */
-	sp = getsymtab("0hej", STEMP);
+	sp = getsymtab("0hej", SSTMT);
 	sp->stype = t;
 	sp->sdf = df;
 	sp->sap = ap;
