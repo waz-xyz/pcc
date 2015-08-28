@@ -1,5 +1,5 @@
 %{
-/*	$Id: scan.l,v 1.136 2015/08/27 19:59:08 ragge Exp $	*/
+/*	$Id: scan.l,v 1.137 2015/08/28 13:59:34 ragge Exp $	*/
 
 /*
  * Copyright (c) 2002 Anders Magnusson. All rights reserved.
@@ -106,7 +106,7 @@ extern void yyset_lineno (int);
 					return(GCC_DESIG);
 				unput(i);
 			}
-			if ((i = gcc_keyword(yylval.strp, &yylval.nodep)) > 0) {
+			if ((i = gcc_keyword(yylval.strp)) > 0) {
 				if (i == PCC_OFFSETOF)
 					inoso = 1;
 				return i;
