@@ -1,4 +1,4 @@
-/*	$Id: cpp.c,v 1.242 2015/11/06 16:41:24 ragge Exp $	*/
+/*	$Id: cpp.c,v 1.243 2015/11/07 09:49:22 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004,2010 Anders Magnusson (ragge@ludd.luth.se).
@@ -1641,8 +1641,12 @@ chkdir(void)
 	usch ch;
 
 	for (;;) {
-		if (isdir())
+		if (isdir()) {
+#ifndef GCC_COMPAT
+			warning("conditionals inside macro arg list");
+#endif
 			ppdir();
+		}
 		if (flslvl == 0)
 			return;
 		while ((ch = cinput()) != '\n')
