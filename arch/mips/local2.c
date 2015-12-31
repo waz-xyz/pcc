@@ -1,4 +1,4 @@
-/*	$Id: local2.c,v 1.29 2015/12/29 10:04:30 ragge Exp $	 */
+/*	$Id: local2.c,v 1.30 2015/12/31 16:21:02 ragge Exp $	 */
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -142,9 +142,8 @@ void
 eoftn(struct interpass_prolog * ipp)
 {
 	int i, j;
-	int addto;
 
-	addto = offcalc(ipp);
+	(void) offcalc(ipp);
 
 	if (ipp->ipp_ip.ip_lbl == 0)
 		return;		/* no code needs to be generated */
