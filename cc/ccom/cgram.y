@@ -1,4 +1,4 @@
-/*	$Id: cgram.y,v 1.413 2016/02/29 17:31:09 ragge Exp $	*/
+/*	$Id: cgram.y,v 1.414 2016/03/05 15:31:24 ragge Exp $	*/
 
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
@@ -256,7 +256,7 @@ struct savbc {
 	struct rstack *rp;
 	char *strp;
 	struct bks *bkp;
-	union flt *flt;
+	FLT *flt;
 	struct genlist *g;
 }
 
@@ -1310,8 +1310,8 @@ bdty(int op, ...)
 		break;
 
 	case FCON:
-		q->n_dcon = va_arg(ap, union flt *);
-		q->n_type = q->n_dcon->fa[FP_TOP];
+		q->n_dcon = va_arg(ap, FLT *);
+		q->n_type = q->n_dcon->t;
 		break;
 
 	case CALL:
