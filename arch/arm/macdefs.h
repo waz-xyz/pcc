@@ -1,4 +1,4 @@
-/*	$Id: macdefs.h,v 1.17 2015/11/24 17:35:11 ragge Exp $	*/
+/*	$Id: macdefs.h,v 1.18 2016/03/05 15:53:04 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -262,4 +262,3 @@ NODE *arm_builtin_va_copy(const struct bitable *bt, NODE *a);
 
 #define COM     "\t@ "
 #define NARGREGS	4
-#define NATIVE_FLOATING_POINT
