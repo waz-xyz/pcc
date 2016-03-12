@@ -1,4 +1,4 @@
-/*	$Id: cpp.h,v 1.91 2016/03/12 10:25:19 ragge Exp $	*/
+/*	$Id: cpp.h,v 1.92 2016/03/12 14:37:48 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004,2010 Anders Magnusson (ragge@ludd.luth.se).
@@ -175,7 +175,7 @@ enum { NUMBER = 257, UNUMBER, LS, RS, EQ, NE, STRING, WSPACE, CMNT, IDENT,
 struct symtab *lookup(const usch *namep, int enterf);
 struct blocker;
 struct iobuf *submac(struct symtab *nl, int, struct iobuf *, struct blocker *);
-int kfind(struct symtab *nl);
+struct iobuf *kfind(struct symtab *nl);
 void ppdir(void);
 
 void define(void);
