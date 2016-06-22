@@ -1,4 +1,4 @@
-/*	$Id: local2.c,v 1.14 2016/06/22 19:43:16 ragge Exp $	*/
+/*	$Id: local2.c,v 1.15 2016/06/22 19:44:05 ragge Exp $	*/
 /*
  * Copyright (c) 2006 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -452,6 +452,7 @@ if (looping == 0) {
 				fprintf(io, "+" CONFMT, getlval(p));
 		} else
 			fprintf(io, CONFMT, getlval(p));
+		break;
 
 	case OREG:
 		if (p->n_name[0])
