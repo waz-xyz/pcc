@@ -1,4 +1,4 @@
-/*	$Id: ccconfig.h,v 1.16 2016/07/05 08:58:43 ragge Exp $	*/
+/*	$Id: ccconfig.h,v 1.17 2016/07/06 07:49:48 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004 Anders Magnusson (ragge@ludd.luth.se).
@@ -54,6 +54,14 @@
 #elif defined(mach_m68k)
 #define CPPMDADD { "-D__mc68000__", "-D__mc68020__", "-D__m68k__", NULL }
 #define STARTLABEL "_start"
+#elif defined(mach_mips64)
+#ifdef TARGET_BIG_ENDIAN
+#define CPPMDADD { "-D__MIPSEB__", "-D__mips__", "-D__mips64__", NULL }
+#else
+#define CPPMDADD { "-D__MIPSEL__", "-D__mips__", "-D__mipsel__", "-D__mips64__", "-D__mips64el__", NULL }
+#endif
+#define DEFLIBS  { "-lc", NULL }
+#define PCC_EARLY_SETUP { kflag = 1; }
 #else
 #error defines for arch missing
 #endif
