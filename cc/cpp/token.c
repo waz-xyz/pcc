@@ -1,4 +1,4 @@
-/*	$Id: token.c,v 1.182 2016/08/10 17:33:23 ragge Exp $	*/
+/*	$Id: token.c,v 1.183 2016/10/11 13:48:24 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004,2009 Anders Magnusson. All rights reserved.
@@ -168,7 +168,7 @@ inpbuf(int n)
 
 	if (ifiles->infil == -1)
 		return 0;
-	len = read(ifiles->infil, ib->buf+PBMAX, CPPBUF-PBMAX);
+	len = (int)read(ifiles->infil, ib->buf+PBMAX, CPPBUF-PBMAX);
 	if (len == -1)
 		error("read error on file %s", ifiles->orgfn);
 	if (len > 0) {

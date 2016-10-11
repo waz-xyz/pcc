@@ -1,4 +1,4 @@
-/*	$Id: code.c,v 1.87 2016/10/10 19:02:59 ragge Exp $	*/
+/*	$Id: code.c,v 1.88 2016/10/11 13:48:23 ragge Exp $	*/
 /*
  * Copyright (c) 2008 Michael Shalayeff
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
@@ -262,7 +262,7 @@ bfcode(struct symtab **s, int cnt)
 		if (sp == NULL)
 			continue; /* XXX when happens this? */
 
-		ssz = tsize(sp->stype, sp->sdf, sp->sap);
+		ssz = (int)tsize(sp->stype, sp->sdf, sp->sap);
 		switch (typ = argtyp(sp->stype, sp->sdf, sp->sap)) {
 		case INTEGER:
 		case SSE:
