@@ -1,4 +1,4 @@
-/*	$Id: code.c,v 1.2 2017/01/18 18:02:08 ragge Exp $	*/
+/*	$Id: code.c,v 1.3 2017/01/19 07:56:18 ragge Exp $	*/
 /*
  * Copyright (c) 2017 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -30,6 +30,7 @@
 #ifdef LANG_CXX
 #define	p1listf	listf
 #define	p1tfree tfree
+#define	P1ND NODE
 #else
 #define	NODE P1ND
 #define	talloc p1alloc
