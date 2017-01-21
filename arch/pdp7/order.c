@@ -1,4 +1,4 @@
-/*	$Id: order.c,v 1.1 2017/01/17 19:48:36 ragge Exp $	*/
+/*	$Id: order.c,v 1.2 2017/01/21 17:18:46 ragge Exp $	*/
 /*
  * Copyright (c) 2017 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -107,9 +107,8 @@ shumul(NODE *p, int shape)
 	if (x2debug)
 		printf("shumul(%p)\n", p);
 
-	/* Turns currently anything into OREG on x86 */
-	if (shape & SOREG)
-		return SROREG;
+	if (shape & SNAME)
+		return SRDIR;
 	return SRNOPE;
 }
 
