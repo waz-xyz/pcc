@@ -1,4 +1,4 @@
-/*	$Id: cpp.c,v 1.326 2021/08/09 00:40:09 gmcgarry Exp $	*/
+/*	$Id: cpp.c,v 1.327 2021/08/09 03:08:39 gmcgarry Exp $	*/
 
 /*
  * Copyright (c) 2004,2010 Anders Magnusson (ragge@ludd.luth.se).
@@ -845,7 +845,6 @@ fsrch(const usch *fn, int idx, register struct incs *w)
 			if (fsrch_macos_framework(fn, dir) == 1)
 				return 1;
 		}
-		free(dir);
 
 		if (fsrch_macos_framework(fn,
 		    (const usch *)"/Library/Frameworks/") == 1)
