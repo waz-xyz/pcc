@@ -1,4 +1,4 @@
-/*	$Id: code.c,v 1.13 2016/06/27 11:47:06 ragge Exp $	*/
+/*	$Id: code.c,v 1.14 2021/10/08 15:47:36 ragge Exp $	*/
 /*
  * Copyright (c) 2006 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -35,6 +35,7 @@
 #define p1nfree nfree
 #define p1fwalk fwalk
 #define p1tcopy ccopy
+#define p1listf listf
 #endif
 
 /*
@@ -173,6 +174,7 @@ bfcode(struct symtab **a, int n)
 			a[i]->stype = INT;
 		if (a[i]->stype == UCHAR)
 			a[i]->stype = UNSIGNED;
+		a[i]->soffset = -a[i]->soffset; /* stack goes upward */
 	}
 
 	if (cftnsp->stype != STRTY+FTN && cftnsp->stype != UNIONTY+FTN)
@@ -228,7 +230,7 @@ fnummer(P1ND *p)
 	if (p->n_op != FUNARG)
 		return;
 	p->n_rval = xoff;
-	xoff += tsize(p->n_type, p->n_df, p->n_ap)/SZSHORT;
+	xoff -= tsize(p->n_type, p->n_df, p->n_ap)/SZSHORT;
 }
 
 /*
@@ -256,7 +258,7 @@ funcode(P1ND *p)
 		r->n_type = l->n_type;
 	}
 
-	xoff = 1;
+	xoff = -2;
 	p1listf(p->n_right, fnummer);
 	return p;
 }
