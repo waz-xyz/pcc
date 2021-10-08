@@ -1,4 +1,4 @@
-/*	$Id: pftn.c,v 1.434 2021/08/29 09:21:56 gmcgarry Exp $	*/
+/*	$Id: pftn.c,v 1.435 2021/10/08 15:59:07 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -1336,7 +1336,7 @@ oalloc(struct symtab *p, int *poff )
 	al = talign(p->stype, p->sap);
 	noff = off = *poff;
 	tsz = (int)tsize(p->stype, p->sdf, p->sap);
-#ifdef BACKAUTO
+#ifdef STACK_DOWN
 	if (p->sclass == AUTO) {
 		noff = off + tsz;
 		if (noff < 0)

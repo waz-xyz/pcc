@@ -1,4 +1,4 @@
-/*	$Id: macdefs.h,v 1.13 2021/10/08 15:47:36 ragge Exp $	*/
+/*	$Id: macdefs.h,v 1.14 2021/10/08 15:59:06 ragge Exp $	*/
 /*
  * Copyright (c) 2006 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -99,8 +99,7 @@ typedef long OFFSZ;
 #define LABFMT	"L%d"		/* format for printing labels */
 #define	STABLBL	"LL%d"		/* format for stab (debugging) labels */
 
-#undef BACKAUTO 		/* stack grows upwards for automatics */
-#undef BACKTEMP 		/* stack grows upwards for temporaries */
+#undef STACK_DOWN 		/* stack grows upwards for automatics */
 #define ARGINIT		32	/* first arg at 2 word below offset */
 #define AUTOINIT	16	/* first var one word above offset */
 

@@ -1,4 +1,4 @@
-/*	$Id: reader.c,v 1.305 2021/09/20 10:37:51 gmcgarry Exp $	*/
+/*	$Id: reader.c,v 1.306 2021/10/08 15:59:07 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -1611,7 +1611,7 @@ freetemp(int k)
 	al = (k > 1 ? ALDOUBLE/ALCHAR : ALINT/ALCHAR);
 	sz = k * (SZINT/SZCHAR);
 
-#ifndef BACKTEMP
+#ifndef STACK_DOWN
 	SETOFF(p2autooff, al);
 	t = p2autooff;
 	p2autooff += sz;
