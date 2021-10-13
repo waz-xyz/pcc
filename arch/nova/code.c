@@ -1,4 +1,4 @@
-/*	$Id: code.c,v 1.14 2021/10/08 15:47:36 ragge Exp $	*/
+/*	$Id: code.c,v 1.15 2021/10/13 17:07:36 ragge Exp $	*/
 /*
  * Copyright (c) 2006 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -174,7 +174,6 @@ bfcode(struct symtab **a, int n)
 			a[i]->stype = INT;
 		if (a[i]->stype == UCHAR)
 			a[i]->stype = UNSIGNED;
-		a[i]->soffset = -a[i]->soffset; /* stack goes upward */
 	}
 
 	if (cftnsp->stype != STRTY+FTN && cftnsp->stype != UNIONTY+FTN)
